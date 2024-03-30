@@ -3,5 +3,6 @@
  
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-docker-app</artifactId>
+  <packaging>war</packaging>
   <version>1</version>
 </project>
