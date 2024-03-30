@@ -1,0 +1,42 @@
+https://www.jenkins.io/download/
+https://www.redhat.com/sysadmin/install-jenkins-rhel8
+
+- Install a Base machine (Linux, Centos, Ubuntu)
+- Installation of JAVA: Java needs to be installed and configured on the server on which you want to configure Jenkins. OpenJDK is preferred with Jenkins
+- Installation of Jenkins
+- Start of Jenkin Server
+- Open port in firewall 
+- Access Web UI on Port 8080
+- Access via internal password & create a new password
+
+# Installation of Java https://www.digitalocean.com/community/tutorials/install-maven-linux-ubuntu
+
+#sudo apt update
+#sudo apt install fontconfig openjdk-17-jre
+#java -version
+
+#sudo apt-get install wget
+#sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key 
+#echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \  /etc/apt/sources.list.d/jenkins.list > /dev/null
+#sudo apt install ca-certificates
+#sudo apt-get update 
+#sudo apt-get install jenkins
+
+#systemctl enable  jenkins && systemctl start jenkins
+
+#You also need to add Jenkins service to run with the firewall and add its exception so that it is available to access from the outside world. Finally, we need to reload the firewall service for the changes to take effect.
+
+# firewall-cmd --add-port=8080/tcp --permanent && firewall-cmd --reload
+
+To check the firewall status and accessible ports, use the firewall-cmd command:
+# firewall-cmd --list-all
+
+Access to the web page follows: http://localhost:8080
+
+Configuring Jenkins
+https://www.jenkins.io/doc/book/installing/linux/
+You can configure the Jenkins service on port 8080 of your system, but Jenkins is temporarily locked with a password present in the  /var/lib/Jenkins/secrets/initial admin password file. You can access Jenkins by providing the password after reading the file.
+
+Create a new user following Manage Jenkins > User 
+
+Configure with Install all plugin 
