@@ -6,6 +6,7 @@ https://www.redhat.com/sysadmin/install-jenkins-rhel8
 - Installation of Jenkins
 - Start of Jenkin Server
 - Open port in firewall 
+- Important Point Jenkin server Listen from 32768 to 60999 as assigned to Jenkins for connecting with Docker containers, if need to connect to jenkin Agent node we need to manually define speific Port under security & open at firewall level.
 - Access Web UI on Port 8080
 - Access via internal password & create a new password
 
