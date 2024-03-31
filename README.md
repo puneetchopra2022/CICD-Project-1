@@ -156,11 +156,21 @@ pipeline {
 
 
 
-Note : - Cloud agent in Jenkin
+Note : - 
+---------- Cloud agent in Jenkin
 https://www.youtube.com/watch?v=GGAp74b68Qc 
 https://phoenixnap.com/kb/how-to-configure-docker-in-jenkins  
-Forcefully restart job stuck 
+------Forcefully restart job stuck 
     ssh onto the jenkins server
     cd to .jenkins/jobs/<job-name>/builds/
     rm -rf <build-number>
     restart jenkins
+----------concept of webhook
+ GitHub hook trigger for GITScm polling
+
+Webhooks allow external services to be notified when certain events happen. When the specified events happen, we'll send a POST request to each of the URLs you provide.
+
+Need to give Ip of Jenkin server in github  http://192.168.110.190:8080/github-webhook/
+
+
+
