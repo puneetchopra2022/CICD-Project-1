@@ -138,12 +138,12 @@ pipeline {
         }
         stage(dockerlogin)  {
             steps {
-              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'     
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'      ##   if stuck when jenkin job run we need to remove sudo from command 
             }
         }
         stage(pushtodocker) {
             steps {
-              sh "sudo docker push puneet2022/learning:tomcatimage "    
+              sh "sudo docker push puneet2022/learning:tomcatimage "        ##   if stuck when jenkin job run we need to remove sudo from command 
             }
         }
     }
