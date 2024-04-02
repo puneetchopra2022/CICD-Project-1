@@ -1,27 +1,4 @@
-# CICD-Project-1
-GitHub+Jenkins+Maven+Docker
 
-
-This Project involves
-
-
-Developer Push Code > GitHub > Jenkin Pull Code from GithUb > Maven build Code > Jenkin help to create an Docker image with help of Docker > Finally creation of Docker container 
-
-
-**DevOps LifeCycle**: PLAN → CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR 
-
-**Step 1** : Availability of GitHub account & repository  ## Github is use for Distributer Source Code management Tool
-             https://github.com/puneetchopra2022/CICD-Project-1.git 
-            Make sure Branch main as master 
-
-**Step 2**(Master Jenkin) : Installation fo Jenking Server on Ubuntu machine   ## Jenkin is Continue Integration Tool, its help to automate build & deployment process, Jenkin use default port as 8080, Current version of Jenkin we use is 2.440.2
-
-**Step 3** (Master Jenkin) : After Jenkin configuration please make sure Github plugin install automatically if not installed Install Git plugin in Jenkin UI Configure Git on Jenkin GUI  > Manage Jenkins > Tools 
-             also installed Git on jenkin server follow command #sudo apt-get install git
-
-**Step 4: Now run an pipeline job using jenking with different stages 
-     - Pipeline can be use Groovy pipeline script
-     - Pileline can be use declarative script 
 
 **Step 5** (Master Jenkin) Installation of Maven , install maven on Jenkin Plugin + define Maven under tools maven tab as well with name as M3 other way if maven need to install manually on Jenkin server then we need to follow   https://www.digitalocean.com/community/tutorials/install-maven-linux-ubuntu
 
@@ -33,8 +10,7 @@ Developer Push Code > GitHub > Jenkin Pull Code from GithUb > Maven build Code >
           # reboot 
 This method where we can have master Jenkin + Slave agents & slave agents can perfom build & deploy 
 
-Stages 1 : Gitclone ( Make sure pom.xml file should be available ) https://maven.apache.org/guides/introduction/introduction-to-the-pom.html , A Project Object Model or POM is the fundamental unit of work in Maven. 
-                                                                                                       It is an XML file that contains information about the project and configuration details used by Maven to build the project
+
 Stage 2 : mvn Build
 Stage 3: docker image build
 Stage 4: docker container validation & termination
