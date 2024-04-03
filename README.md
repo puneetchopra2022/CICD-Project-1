@@ -1,3 +1,7 @@
+
+![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/a45b264a-0238-4617-aaa3-c7df7c2e3b0b)
+
+
 Stage 1: Gitclone ( Make sure pom.xml file should be available ) https://maven.apache.org/guides/introduction/introduction-to-the-pom.html 
          A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project
 		 Availability of GitHub account & repository  ## Github is use for Distributer Source Code management Tool
@@ -22,6 +26,3 @@ Stage 6: dockerpush
 Stage 7: Post call for docker logout
 
 Automate this Job with enabling of Gitwebhook 
-
-
-![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/a45b264a-0238-4617-aaa3-c7df7c2e3b0b)
