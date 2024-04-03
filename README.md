@@ -9,8 +9,7 @@ Stage 1: Gitclone ( Make sure pom.xml file should be available ) https://maven.a
          A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project
 		 Availability of GitHub account & repository  ## Github is use for Distributer Source Code management Tool
          https://github.com/puneetchopra2022/CICD-Project-1.git 
-         Make sure Branch main 
-		 Make sure to install Git on Jenkin Server 
+        		 Make sure to install Git on Jenkin Server 
 
 Stage 2: Maven build 
          Install maven on Jenkin, Manage Jenkin>tools>install maven 
