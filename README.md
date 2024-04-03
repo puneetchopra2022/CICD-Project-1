@@ -1,6 +1,9 @@
 
 ![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/a45b264a-0238-4617-aaa3-c7df7c2e3b0b)
 
+![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/e532002a-a440-4417-9b8b-1bf97c9f1015)
+
+
 
 Stage 1: Gitclone ( Make sure pom.xml file should be available ) https://maven.apache.org/guides/introduction/introduction-to-the-pom.html 
          A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project
