@@ -1,0 +1,43 @@
+pipeline {
+    agent {
+      label 'slave'    
+    }
+    tools{
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven 'M3'
+    }
+
+    stages {
+        stage(printmessagefortesting) {
+            steps {
+               echo 'hello world'
+            }
+        }
+        stage(Gitclone) {
+            steps {
+              git 'https://github.com/puneetchopra2022/CICD-Project-1.git'
+            }
+        }
+        stage(mvnbuild) {
+            steps {
+                sh 'mvn clean package'
+            }
+        
+        }
+        stage(dockerbuild) {
+            steps {
+              sh 'docker build -t tomcatimage .'    
+            }
+        }
+        stage(containerrun) {
+                steps {
+                sh 'docker stop tomcatserver'  
+                sh 'docker rm tomcatserver'
+                sh "docker run -dt -p 9090:8080 --name tomcatserver tomcatimage"
+                    
+                }    
+        }
+        
+    }
+
+}
