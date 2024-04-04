@@ -1,59 +1,48 @@
 pipeline {
     agent {
-      label 'slave'    
+        label 'Jenkins-Slave'
     }
-    tools{
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven 'M3'
+    tools {
+        maven "M3"
     }
     environment {
         DOCKERHUB_CREDENTIALS= credentials('dockerpushcredentials') 
     }
-
     stages {
-        stage(printmessagefortesting) {
-            steps {
-               echo 'hello world'
-            }
-        }
         stage(Gitclone) {
             steps {
               git 'https://github.com/puneetchopra2022/CICD-Project-1.git'
             }
         }
-        stage(mvnbuild) {
-            steps {
-                sh 'mvn clean package'
-            }
-        
+        stage(mavensonaranalysis) {
+           steps {
+            withSonarQubeEnv('sonaqube') {   
+            sh "mvn clean package sonar:sonar -Dsonar.projectKey=sonaqube"
+           }
+         } 
         }
         stage(dockerbuild) {
             steps {
-              sh 'docker build -t puneet2022/learning:tomcatimage .'    
+                sh 'docker build -t puneet2022/learning:pipeline . ' 
+            }
+            
+        }
+        stage(containerun) {
+            steps {
+               sh "docker stop piplelinecontainer"
+               sh "docker rm piplelinecontainer"    
+               sh "docker run -dt --name piplelinecontainer -p 92:8080 puneet2022/learning:pipeline"
             }
         }
-        stage(containerrun) {
-                steps {
-                sh 'docker stop tomcatserver'  
-                sh 'docker rm tomcatserver'
-                sh "docker run -dt -p 9090:8080 --name tomcatserver puneet2022/learning:tomcatimage"
-                    
-                }    
-        }
-        stage(dockerlogin)  {
+        stage(dockerlogi)  {
             steps {
-              sh 'echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'      ##   if stuck when jenkin job run we need to remove sudo from command 
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW |  docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
-        stage(pushtodocker) {
+        stage(dockerpush) {
             steps {
-              sh " docker push puneet2022/learning:tomcatimage "        ##   if stuck when jenkin job run we need to remove sudo from command 
+                sh " docker push puneet2022/learning:pipeline " 
             }
         }
     }
-    post{
-    always {  
-      sh 'docker logout'           
-    }      
-  }    
 }
