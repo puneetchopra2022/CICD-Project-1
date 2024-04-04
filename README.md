@@ -1,4 +1,4 @@
-![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/62eb29a4-e73c-4b0f-a733-ab1ca2f10dab)
+![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/0141979a-4f64-4bce-ad0a-f37afda0ad96)
 
 
 ![image](https://github.com/puneetchopra2022/CICD-Project-1/assets/96010416/e532002a-a440-4417-9b8b-1bf97c9f1015)
